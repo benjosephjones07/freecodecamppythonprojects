@@ -1,15 +1,15 @@
-# youtuber = "Kylie Ying"
+import random
 
-# print("subscribe to " + youtuber)
-# print("subscribe to {}".format(youtuber))
-# print(f"subscribe to {youtuber}")
+def guess(x):
+    random_number = random.randint(1, x)
+    guess = 0
+    while guess != random_number:
+        guess = int(input(f"Guess a number between 1 and {x}: "))
+        if guess < random_number:
+            print('Sorry, guess again. Too low.')
+        elif guess > random_number:
+            print('Sorry, guess again. Too high.')
 
-adj = input("Adjective: ")
-verb1 = input("Verb: ")
-verb2 = input("Verb: ")
-famous_person = input("Famous person: ")
+    print(f"Yay congrats! You have guessed the number {random_number} correctly!")
 
-madlib = f"computer programming is so {adj}! It makes me so excited all the time because \
-I love to {verb1}. Stay hydrated and {verb2} like you are {famous_person}!"
-
-print(madlib)
+guess(10)
